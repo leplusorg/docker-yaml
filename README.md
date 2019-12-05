@@ -2,14 +2,30 @@
 
 Docker container with utilities to process YAML files (yamllint...).
 
-## Example
+## Example not using the filesystem
 
-Assuming that you have a file `foo.yaml` in your current working directory:
+Let's say that you have a file `foo.yml` in your current working directory that you want to validate:
 
 ### Mac/Linux
 
 ```
-$ docker run --rm -it --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" thomasleplus/yaml yamllint /tmp/foo.yaml
+cat foo.yml | docker run --rm -i --net=none thomasleplus/yaml yamllint -
+```
+
+### Windows
+
+```
+type foo.yml | docker run --rm -i --net=none thomasleplus/yaml yamllint -
+```
+
+## Example using the filesystem
+
+Same thing, assuming that you have a file `foo.yml` in your current working directory that you want to validate:
+
+### Mac/Linux
+
+```
+docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" thomasleplus/yaml yamllint /tmp/foo.yml
 ```
 
 ### Windows
@@ -17,13 +33,13 @@ $ docker run --rm -it --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" tho
 In `cmd`:
 
 ```
-$ docker run --rm -it --net=none -v "%cd%:/tmp" thomasleplus/yaml yamllint /tmp/foo.yaml
+docker run --rm -t --net=none -v "%cd%:/tmp" thomasleplus/yaml yamllint /tmp/foo.yml
 ```
 
 In PowerShell:
 
 ```
-$ docker run --rm -it --net=none -v "${PWD}:/tmp" thomasleplus/yaml yamllint /tmp/foo.yaml
+docker run --rm -t --net=none -v "${PWD}:/tmp" thomasleplus/yaml yamllint /tmp/foo.yml
 ```
 
 ## Help
@@ -31,5 +47,5 @@ $ docker run --rm -it --net=none -v "${PWD}:/tmp" thomasleplus/yaml yamllint /tm
 To know more command line options of `yamllint`:
 
 ```
-$ docker run --rm -it --net=none thomasleplus/yaml yamllint -h
+docker run --rm --net=none thomasleplus/yaml yamllint -h
 ```
