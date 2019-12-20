@@ -8,6 +8,6 @@ RUN apk --update --no-cache add py3-setuptools \
 RUN pip3 install --no-cache-dir \
     json2yaml \
     yamllint \
-    yamlpath \
+    yamlpath
     
 RUN wget -O /usr/bin/yq "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64"
