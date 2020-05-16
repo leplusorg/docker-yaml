@@ -2,6 +2,11 @@
 
 Docker container with utilities to process YAML files (yamllint...).
 
+![Docker Stars](https://img.shields.io/docker/stars/thomasleplus/yaml.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/yaml.svg)
+![Docker Automated](https://img.shields.io/docker/automated/thomasleplus/yaml.svg)
+![Docker Build](https://img.shields.io/docker/build/thomasleplus/yaml.svg)
+
 ## Example not using the filesystem
 
 Let's say that you have a file `foo.yml` in your current working directory that you want to validate:
