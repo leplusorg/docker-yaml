@@ -7,6 +7,7 @@ Docker container with utilities to process YAML files (yamllint...).
 ![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/yaml)
 ![Docker Automated](https://img.shields.io/docker/cloud/automated/thomasleplus/yaml)
 ![Docker Build](https://img.shields.io/docker/cloud/build/thomasleplus/yaml)
+![Docker Version](https://img.shields.io/docker/v/thomasleplus/yaml?sort=semver)
 
 ## Example not using the filesystem
 
