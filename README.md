@@ -2,7 +2,7 @@
 
 Docker container with utilities to process YAML files (yamllint...).
 
-![GitHub Build](https://img.shields.io/github/workflow/status/thomasleplus/docker-yaml/Docker%20Image%20CI)
+![Docker Build](https://github.com/thomasleplus/docker-yaml/workflows/Docker/badge.svg)
 ![Docker Stars](https://img.shields.io/docker/stars/thomasleplus/yaml)
 ![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/yaml)
 ![Docker Automated](https://img.shields.io/docker/cloud/automated/thomasleplus/yaml)
