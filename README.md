@@ -2,12 +2,12 @@
 
 Docker container with utilities to process YAML files (yamllint...).
 
-![Docker Build](https://github.com/thomasleplus/docker-yaml/workflows/Docker/badge.svg)
-![Docker Stars](https://img.shields.io/docker/stars/thomasleplus/yaml)
-![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/yaml)
-![Docker Automated](https://img.shields.io/docker/cloud/automated/thomasleplus/yaml)
-![Docker Build](https://img.shields.io/docker/cloud/build/thomasleplus/yaml)
-![Docker Version](https://img.shields.io/docker/v/thomasleplus/yaml?sort=semver)
+[![Docker Build](https://github.com/thomasleplus/docker-yaml/workflows/Docker/badge.svg)](https://github.com/thomasleplus/docker-yaml/actions?query=workflow:"Docker")
+[![Docker Stars](https://img.shields.io/docker/stars/thomasleplus/yaml)](https://hub.docker.com/r/thomasleplus/yaml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/thomasleplus/yaml)](https://hub.docker.com/r/thomasleplus/yaml)
+[![Docker Automated](https://img.shields.io/docker/cloud/automated/thomasleplus/yaml)](https://hub.docker.com/r/thomasleplus/yaml)
+[![Docker Build](https://img.shields.io/docker/cloud/build/thomasleplus/yaml)](https://hub.docker.com/r/thomasleplus/yaml)
+[![Docker Version](https://img.shields.io/docker/v/thomasleplus/yaml?sort=semver)](https://hub.docker.com/r/thomasleplus/yaml)
 
 ## Example not using the filesystem
 
