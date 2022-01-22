@@ -13,15 +13,15 @@ Docker container with utilities to process YAML files (yamllint...).
 
 Let's say that you have a file `foo.yml` in your current working directory that you want to validate:
 
-### Mac/Linux
+**Mac/Linux**
 
-```
+```bash
 cat foo.yml | docker run --rm -i --net=none leplusorg/yaml yamllint -
 ```
 
-### Windows
+**Windows**
 
-```
+```batch
 type foo.yml | docker run --rm -i --net=none leplusorg/yaml yamllint -
 ```
 
@@ -29,23 +29,23 @@ type foo.yml | docker run --rm -i --net=none leplusorg/yaml yamllint -
 
 Same thing, assuming that you have a file `foo.yml` in your current working directory that you want to validate:
 
-### Mac/Linux
+**Mac/Linux**
 
-```
+```bash
 docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" leplusorg/yaml yamllint /tmp/foo.yml
 ```
 
-### Windows
+**Windows**
 
 In `cmd`:
 
-```
+```batch
 docker run --rm -t --net=none -v "%cd%:/tmp" leplusorg/yaml yamllint /tmp/foo.yml
 ```
 
 In PowerShell:
 
-```
+```pwsh
 docker run --rm -t --net=none -v "${PWD}:/tmp" leplusorg/yaml yamllint /tmp/foo.yml
 ```
 
@@ -53,7 +53,7 @@ docker run --rm -t --net=none -v "${PWD}:/tmp" leplusorg/yaml yamllint /tmp/foo.
 
 To know more command line options of `yamllint`:
 
-```
+```bash
 docker run --rm --net=none leplusorg/yaml yamllint -h
 ```
 

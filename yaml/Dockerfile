@@ -1,9 +1,11 @@
 FROM alpine:3.15.0
 
+# hadolint ignore=DL3018
 RUN apk --update --no-cache add py3-setuptools py3-pip \
     && rm -rf /var/cache/apk/*
 
-RUN pip3 install --no-cache-dir \
+# hadolint ignore=DL3013
+RUN pip3 install --no-cache-dir --upgrade \
     json2yaml \
     yamllint \
     yamlpath \
