@@ -51,7 +51,7 @@ docker run --rm -t --net=none -v "${PWD}:/tmp" leplusorg/yaml yamllint /tmp/foo.
 
 ## Help
 
-To know more command line options of `yamllint`:
+To know more command-line options of `yamllint`:
 
 ```bash
 docker run --rm --net=none leplusorg/yaml yamllint -h
