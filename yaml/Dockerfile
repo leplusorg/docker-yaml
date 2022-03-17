@@ -1,4 +1,4 @@
-FROM alpine:3.15.0
+FROM alpine:3.15
 
 # hadolint ignore=DL3018
 RUN apk --update --no-cache add py3-setuptools py3-pip \
