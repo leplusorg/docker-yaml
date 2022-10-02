@@ -1,7 +1,7 @@
 FROM alpine:3.16.2
 
 # hadolint ignore=DL3018
-RUN apk --update --no-cache add py3-setuptools py3-pip \
+RUN apk --update --no-cache add build-base py3-setuptools py3-pip \
     && rm -rf /var/cache/apk/*
 
 # hadolint ignore=DL3013
