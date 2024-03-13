@@ -25,12 +25,20 @@ jobs:
         id: meta
         with:
           images: ${{ github.repository_owner }}/yaml
+          tags: |
+	    type=schedule
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+	    type=sha
       - uses: docker/build-push-action@v5
         with:
           context: yaml
           platforms: linux/amd64,linux/arm64
           pull: true
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           sbom: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
