@@ -21,6 +21,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - uses: docker/metadata-action@v5
+        id: meta
+        with:
+          images: ${{ github.repository_owner }}/yaml
       - uses: docker/build-push-action@v5
         with:
           context: yaml
@@ -28,7 +32,8 @@ jobs:
           pull: true
           push: true
           sbom: true
-          tags: leplusorg/yaml:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
       - name: Test the Docker image
         working-directory: yaml
         run: docker compose -f docker-compose.test.yml run sut
