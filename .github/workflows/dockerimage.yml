@@ -46,6 +46,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: docker/build-push-action@v5
+        id: build-and-push
         with:
           context: ${{ env.IMAGE }}
           platforms: linux/amd64,linux/arm64
