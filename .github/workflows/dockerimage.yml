@@ -62,7 +62,7 @@ jobs:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
           COSIGN_PASSWORD: ""
-        run: \echo "${TAGS}" | \xargs -I {} cosign sign --key <(\echo "${COSIGN_PRIVATE_KEY}") --yes "{}@${DIGEST}" \
+        run: \echo "${TAGS}" | \xargs -I {} cosign sign --key <(\printf '%s\n' "${COSIGN_PRIVATE_KEY}") --yes "{}@${DIGEST}" \
             -a "workflow=${{ github.workflow }}" \
             -a "repo=${{ github.repository }}" \
             -a "branch=${{ github.ref_name }}" \
