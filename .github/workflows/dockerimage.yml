@@ -25,7 +25,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: sigstore/cosign-installer@v3
         with:
-          cosign-release: 'v2.1.1'
+          cosign-release: v2.1.1
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
       - uses: docker/metadata-action@v5
@@ -60,7 +60,7 @@ jobs:
         env:
           TAGS: ${{ steps.meta.outputs.tags }}
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
-        run: \echo "${TAGS}" | \xargs -I {} cosign sign --yes {}@${DIGEST} \
+        run: \echo "${TAGS}" | \xargs -I {} cosign sign --yes "{}@${DIGEST}" \
             -a "workflow=${{ github.workflow }}" \
             -a "repo=${{ github.repository }}" \
             -a "branch=${{ github.ref_name }}" \
