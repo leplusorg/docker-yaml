@@ -62,7 +62,6 @@ jobs:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
         run: |
-          export GPG_TTY=$(tty)
           \echo "${COSIGN_PRIVATE_KEY}" > cosign.key
           \echo "${TAGS}" | \xargs -I {} cosign sign --key cosign.key --yes "{}@${DIGEST}" \
             -a "workflow=${{ github.workflow }}" \
