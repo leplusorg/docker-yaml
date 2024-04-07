@@ -5,8 +5,6 @@ Docker container with utilities to process YAML files (yamllint...).
 [![Docker Build](https://github.com/leplusorg/docker-yaml/workflows/Docker/badge.svg)](https://github.com/leplusorg/docker-yaml/actions?query=workflow:"Docker")
 [![Docker Stars](https://img.shields.io/docker/stars/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
-[![Docker Automated](https://img.shields.io/docker/cloud/automated/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
-[![Docker Build](https://img.shields.io/docker/cloud/build/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
 [![Docker Version](https://img.shields.io/docker/v/leplusorg/yaml?sort=semver)](https://hub.docker.com/r/leplusorg/yaml)
 
 ## Example not using the filesystem
