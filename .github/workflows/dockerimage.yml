@@ -62,14 +62,11 @@ jobs:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
           COSIGN_PASSWORD: ''
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
-        run: |
-          \echo "${COSIGN_PRIVATE_KEY}" > cosign.key
-          \echo "${TAGS}" | \xargs -I {} cosign sign --key cosign.key --yes "{}@${DIGEST}" \
-            -a "workflow=${{ github.workflow }}" \
-            -a "repo=${{ github.repository }}" \
-            -a "branch=${{ github.ref_name }}" \
-            -a "ref=${{ github.sha }}"
-          \rm -f cosign.key
+        run: \echo "${TAGS}" | \xargs -I {} cosign sign --key <(\echo "${COSIGN_PRIVATE_KEY}") --yes "{}@${DIGEST}" \
+          -a "workflow=${{ github.workflow }}" \
+          -a "repo=${{ github.repository }}" \
+          -a "branch=${{ github.ref_name }}" \
+          -a "ref=${{ github.sha }}"
       - name: Test the Docker image
         working-directory: ${{ env.IMAGE }}
         run: docker compose -f docker-compose.test.yml run sut
