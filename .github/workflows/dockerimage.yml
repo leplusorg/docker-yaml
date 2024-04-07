@@ -60,7 +60,7 @@ jobs:
         env:
           TAGS: ${{ steps.meta.outputs.tags }}
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
-	  COSIGN_PASSWORD: ''
+	  COSIGN_PASSWORD: ""
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
         run: |
           \echo "${COSIGN_PRIVATE_KEY}" > cosign.key
