@@ -4,6 +4,11 @@ HEALTHCHECK NONE
 
 ENTRYPOINT []
 
+ARG USER_NAME=default
+ARG USER_HOME=/home/default
+ARG USER_ID=1000
+ARG USER_GECOS=Default
+
 # hadolint ignore=DL3018
 RUN apk --update --no-cache add build-base python3-dev py3-setuptools py3-pip yamllint \
     && rm -rf /var/cache/apk/*
@@ -15,12 +20,15 @@ RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
     yamlpath \
     yq
 
-ARG USER=default
+RUN adduser \
+  --home "${USER_HOME}" \
+  --uid "${USER_ID}" \
+  --gecos "${USER_GECOS}" \
+  --disabled-password \
+  "${USER_NAME}"
 
-ENV HOME "/home/${USER}"
+ENV HOME "${USER_HOME}"
 
-RUN adduser -D "${USER}"
-
-USER "${USER}"
+USER "${USER_NAME}"
 
 WORKDIR "${HOME}"
