@@ -7,6 +7,8 @@ Docker container with utilities to process YAML files (yamllint...).
 [![Docker Stars](https://img.shields.io/docker/stars/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
 [![Docker Version](https://img.shields.io/docker/v/leplusorg/yaml?sort=semver)](https://hub.docker.com/r/leplusorg/yaml)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/10074/badge)](https://bestpractices.coreinfrastructure.org/projects/10074)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/leplusorg/docker-yaml/badge)](https://securityscorecards.dev/viewer/?uri=github.com/leplusorg/docker-yaml)
 
 ## Example not using the filesystem
 
