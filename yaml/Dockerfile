@@ -20,7 +20,7 @@ RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
     yamllint==1.36.0 \
     yamlpath==3.8.2 \
     yq==3.4.3 \
-    && msg="$(pip list --outdated | grep -e json2yaml -e yamllint -e yamlpath -e yq || true)" \
+    && msg="$(pip list --outdated | grep -i -e json2yaml -e yamllint -e yamlpath -e yq || true)" \
     && if [ -n "${msg}" ]; then \
        >&2 echo "ERROR: outdated: ${msg}" ; \
        exit 1 ; \
