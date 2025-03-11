@@ -15,9 +15,14 @@ RUN apk --update --no-cache add build-base jq python3-dev py3-setuptools py3-pip
 
 # hadolint ignore=DL3013
 RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
-    json2yaml \
-    yamlpath \
-    yq
+    json2yaml==1.2.0 \
+    yamlpath==3.8.2 \
+    yq==3.4.2 \
+    && msg="$(pip list --outdated | grep -e yamllint || true)" \
+    && if [ -n "${msg}" ]; then \
+       >&2 echo "ERROR: outdated: ${msg}" ; \
+       exit 1 ; \
+    fi
 
 RUN adduser \
   --home "${USER_HOME}" \
