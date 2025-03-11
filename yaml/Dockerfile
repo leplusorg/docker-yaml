@@ -16,9 +16,9 @@ RUN apk --update --no-cache add build-base jq python3-dev py3-setuptools py3-pip
 # hadolint ignore=DL3013
 RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
     json2yaml==1.2.0 \
-    yamllint==1.6.0 \
+    yamllint==1.36.0 \
     yamlpath==3.8.2 \
-    yq==3.4.2 \
+    yq==3.4.3 \
     && msg="$(pip list --outdated | grep -e json2yaml -e yamllint -e yamlpath -e yq || true)" \
     && if [ -n "${msg}" ]; then \
        >&2 echo "ERROR: outdated: ${msg}" ; \
