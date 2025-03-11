@@ -10,7 +10,7 @@ ARG USER_ID=1000
 ARG USER_GECOS=Default
 
 # hadolint ignore=DL3018
-RUN apk --update --no-cache add build-base jq python3-dev py3-setuptools py3-pip \
+RUN apk --update --no-cache add jq py3-pip \
     && rm -rf /var/cache/apk/*
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
@@ -20,7 +20,7 @@ RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
     yamllint==1.36.0 \
     yamlpath==3.8.2 \
     yq==3.4.3 \
-    && msg="$(pip list --outdated | grep -i -e json2yaml -e yamllint -e yamlpath -e yq || true)" \
+    && msg="$(pip3 list --outdated | grep -i -e '^json2yaml ' -e '^yamllint ' -e '^yamlpath ' -e '^yq ' || true)" \
     && if [ -n "${msg}" ]; then \
        >&2 echo "ERROR: outdated: ${msg}" ; \
        exit 1 ; \
