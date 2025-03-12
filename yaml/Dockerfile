@@ -9,11 +9,11 @@ ARG USER_HOME=/home/default
 ARG USER_ID=1000
 ARG USER_GECOS=Default
 
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
 # hadolint ignore=DL3018
 RUN apk --update --no-cache add jq py3-pip \
     && rm -rf /var/cache/apk/*
-
-SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
     json2yaml==1.2.0 \
