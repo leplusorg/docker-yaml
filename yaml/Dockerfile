@@ -21,6 +21,7 @@ RUN apk -U upgrade \
       apk -u list ; \
       exit 1 ; \
     fi \
+    && apk cache clean \
     && rm -rf /var/cache/apk/*
 
 RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
