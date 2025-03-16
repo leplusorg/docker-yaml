@@ -2,7 +2,7 @@
 
 Docker container with utilities to process YAML files (yamllint...).
 
-[![Dockerfile](https://img.shields.io/badge/GitHub-Dockerfile-blue)](https://github.com/leplusorg/docker-yaml/blob/main/yaml/Dockerfile)
+[![Dockerfile](yaml/Dockerfile)
 [![Docker Build](https://github.com/leplusorg/docker-yaml/workflows/Docker/badge.svg)](https://github.com/leplusorg/docker-yaml/actions?query=workflow:"Docker")
 [![Docker Stars](https://img.shields.io/docker/stars/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/leplusorg/yaml)](https://hub.docker.com/r/leplusorg/yaml)
