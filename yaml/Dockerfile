@@ -26,7 +26,7 @@ RUN apk -U upgrade \
 
 RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
     json2yaml==1.2.0 \
-    yamllint==1.37.0 \
+    yamllint==1.37.1 \
     yamlpath==3.8.2 \
     yq==3.4.3 \
     && msg="$(pip3 list --outdated | grep -i -e '^json2yaml ' -e '^yamllint ' -e '^yamlpath ' -e '^yq ' || true)" \
