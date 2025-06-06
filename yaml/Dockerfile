@@ -16,7 +16,7 @@ RUN apk -U upgrade \
     && apk add \
     jq=1.8.0-r0 \
     py3-pip=25.1.1-r0 \
-    python3=3.12.10-r1 \
+    python3=3.12.11-r0 \
     && if apk -u list | grep -q -e . ; then \
       apk -u list ; \
       exit 1 ; \
