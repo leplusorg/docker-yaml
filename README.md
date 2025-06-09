@@ -1,6 +1,6 @@
 # YAML
 
-Docker container with utilities to process YAML files (yamllint...).
+Docker container with utilities to process YAML files (yamllint, yamlpath, yq, json2yaml...).
 
 [![Dockerfile](https://img.shields.io/badge/GitHub-Dockerfile-blue)](yaml/Dockerfile)
 [![Docker Build](https://github.com/leplusorg/docker-yaml/workflows/Docker/badge.svg)](https://github.com/leplusorg/docker-yaml/actions?query=workflow:"Docker")
