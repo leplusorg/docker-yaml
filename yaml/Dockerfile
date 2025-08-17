@@ -18,23 +18,22 @@ RUN apk -U upgrade \
     curl=8.14.1-r1 \
     git=2.49.1-r0 \
     jq=1.8.0-r0 \
+    pipx=1.7.1-r0 \
     py3-pip=25.1.1-r0 \
     python3=3.12.11-r0 \
-    && if apk -u list | grep -q -e . ; then \
-      apk -u list ; \
+    && if apk -u list | tee -a /dev/stderr | grep -q -e . ; then \
       exit 1 ; \
     fi \
     && apk cache clean \
     && rm -rf /var/cache/apk/*
 
-RUN pip3 install --no-cache-dir --upgrade --break-system-packages \
+RUN pipx ensurepath --global \
+    && pipx install --global \
     json2yaml==1.2.0 \
     yamllint==1.37.1 \
     yamlpath==3.8.2 \
     yq==3.4.3 \
-    && msg="$(pip3 list --outdated | grep -i -e '^json2yaml ' -e '^yamllint ' -e '^yamlpath ' -e '^yq ' || true)" \
-    && if [ -n "${msg}" ]; then \
-       >&2 echo "ERROR: outdated: ${msg}" ; \
+    && if pipx upgrade-all --global | tee -a /dev/stderr | grep -q -e . ; then \
        exit 1 ; \
     fi
 
