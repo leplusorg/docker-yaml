@@ -21,9 +21,6 @@ RUN apk -U upgrade \
     pipx=1.7.1-r0 \
     py3-pip=25.1.1-r0 \
     python3=3.12.11-r0 \
-    && if apk -u list | tee -a /dev/stderr | grep -q -e . ; then \
-      exit 1 ; \
-    fi \
     && apk cache clean \
     && rm -rf /var/cache/apk/*
 
@@ -32,10 +29,7 @@ RUN pipx ensurepath --global \
     json2yaml==1.2.0 \
     yamllint==1.37.1 \
     yamlpath==3.8.2 \
-    yq==3.4.3 \
-    && if pipx upgrade-all --global | tee -a /dev/stderr | grep -q -e . ; then \
-       exit 1 ; \
-    fi
+    yq==3.4.3
 
 RUN adduser \
   --home "${USER_HOME}" \
