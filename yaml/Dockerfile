@@ -33,7 +33,8 @@ RUN pipx ensurepath --global \
     yq==3.4.3
 
 RUN npm install -g \
-    prettier@3.6.2
+    prettier@3.6.2 \
+    v8r@5.1.0
 
 RUN adduser \
   --home "${USER_HOME}" \
