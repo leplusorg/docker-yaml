@@ -22,6 +22,7 @@ RUN apk -U upgrade \
     pipx=1.7.1-r0 \
     py3-pip=25.1.1-r0 \
     python3=3.12.11-r0 \
+    yq-go=4.46.1-r1 \
     && apk cache clean \
     && rm -rf /var/cache/apk/*
 
@@ -30,8 +31,7 @@ RUN pipx ensurepath --global \
     json2yaml==1.2.0 \
     jsonfmt==0.2.7 \
     yamllint==1.37.1 \
-    yamlpath==3.8.2 \
-    yq==3.4.3
+    yamlpath==3.8.2
 
 RUN npm install -g \
     prettier@3.6.2 \
