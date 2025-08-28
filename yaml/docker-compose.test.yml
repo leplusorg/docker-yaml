@@ -18,6 +18,7 @@ services:
         json2yaml --version # json2yaml
         pip --version # py3-pip
         pipx --version # pipx
+        prettier --version # prettier
         python --version # python3
         yaml-paths --version # yamlpath
         yamllint --version # yamllint

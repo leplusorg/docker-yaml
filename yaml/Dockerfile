@@ -18,6 +18,7 @@ RUN apk -U upgrade \
     curl=8.14.1-r1 \
     git=2.49.1-r0 \
     jq=1.8.0-r0 \
+    npm=11.3.0-r1 \
     pipx=1.7.1-r0 \
     py3-pip=25.1.1-r0 \
     python3=3.12.11-r0 \
@@ -30,6 +31,9 @@ RUN pipx ensurepath --global \
     yamllint==1.37.1 \
     yamlpath==3.8.2 \
     yq==3.4.3
+
+RUN npm install -g \
+    prettier@3.6.2
 
 RUN adduser \
   --home "${USER_HOME}" \
