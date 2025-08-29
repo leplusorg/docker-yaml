@@ -13,6 +13,7 @@ services:
         fi
         base64 --version # coreutils
         curl --version # curl
+        dasel --version # dasel
         git --version # git
         jf -v # jsonfmt
         jq --version # jq
