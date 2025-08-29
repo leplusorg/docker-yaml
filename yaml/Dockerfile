@@ -31,6 +31,7 @@ RUN pipx ensurepath --global \
     && pipx install --global \
     json2yaml==1.2.0 \
     jsonfmt==0.2.7 \
+    remarshal==1.2.0 \
     yamllint==1.37.1 \
     yamlpath==3.8.2
 

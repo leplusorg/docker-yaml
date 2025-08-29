@@ -22,6 +22,7 @@ services:
         pipx --version # pipx
         prettier --version # prettier
         python --version # python3
+        remarshal --version # remarshal
         v8r --version # v8r
         yaml-paths --version # yamlpath
         yamllint --version # yamllint
