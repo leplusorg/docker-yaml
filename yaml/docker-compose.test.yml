@@ -19,7 +19,6 @@ services:
         grep --version # grep
         jf -v # jsonfmt
         jq --version # jq
-        json2yaml --version # json2yaml
         pip --version # py3-pip
         pipx --version # pipx
         prettier --version # prettier
