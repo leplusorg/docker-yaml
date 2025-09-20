@@ -62,6 +62,7 @@ docker run --rm --net=none leplusorg/yaml yamllint -h
 
 Note that many tools included in this image can also handle other
 popular formats like:
+
 - TOML (e.g. v8r, prettier, dasel, yq, remarshal)
 - Java .properties files (e.g. yq)
 - Microsoft Windows INI files (e.g. yq)
