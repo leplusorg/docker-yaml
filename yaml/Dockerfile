@@ -28,12 +28,11 @@ RUN apk upgrade --no-cache \
     && apk cache --no-cache clean \
     && rm -rf /var/cache/apk/*
 
+COPY requirements.txt /tmp/requirements.txt
+
 RUN pipx ensurepath --global \
-    && pipx install --global \
-    jsonfmt==0.2.7 \
-    remarshal==1.2.0 \
-    yamllint==1.37.1 \
-    yamlpath==3.8.2
+    && xargs -a /tmp/requirements.txt -n 1 pipx install --global \
+    && rm -f /tmp/requirements.txt
 
 RUN npm install -g \
     prettier@3.6.2 \

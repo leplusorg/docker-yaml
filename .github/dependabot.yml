@@ -7,6 +7,14 @@ updates:
       interval: "daily"
     commit-message:
       prefix: build(deps)
+  - package-ecosystem: "pip"
+    directory: "/yaml"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: build(deps)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
