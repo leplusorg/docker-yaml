@@ -21,10 +21,10 @@ services:
         jq --version # jq
         pip --version # py3-pip
         pipx --version # pipx
-        prettier --version # prettier
+        npx prettier --version # prettier
         python --version # python3
         remarshal --version # remarshal
-        v8r --version # v8r
+        npx v8r --version # v8r
         yaml-paths --version # yamlpath
         yamllint --version # yamllint
         yq --version # yq-go

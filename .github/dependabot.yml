@@ -15,6 +15,14 @@ updates:
       default-days: 7
     commit-message:
       prefix: build(deps)
+  - package-ecosystem: "npm"
+    directory: "/yaml"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: build(deps)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
