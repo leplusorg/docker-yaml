@@ -8,13 +8,45 @@ on:
 
 permissions: {}
 
+defaults:
+  run:
+    working-directory: yaml
+
 jobs:
-  pipx-check-versions:
+  npm-check-versions:
     runs-on: ubuntu-latest
     steps:
-      - name: Check the versions
+      - name: Check out
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: 3.14
+      - name: Check outdated dependencies
         shell: bash
         run: |
           set -euo pipefail
           IFS=$'\n\t'
-          docker run --pull always -t --user root --entrypoint /bin/sh "leplusorg/${GITHUB_REPOSITORY#*/docker-}:main" -c 'if pipx upgrade-all --global | tee -a /dev/stderr | grep -q -e "^upgraded "; then exit 1; fi'
+          rc=0
+          # Read each line from requirements.txt
+          while IFS= read -r line; do
+              # Skip empty lines and comments
+              if [[ -z "$line" || "$line" =~ ^# ]]; then
+                  continue
+              fi
+              # Extract package name and current version
+              if [[ "$line" =~ ^([a-zA-Z0-9_-]+)==([0-9.]+) ]]; then
+                  package="${BASH_REMATCH[1]}"
+                  current_version="${BASH_REMATCH[2]}"
+                  # Get latest version from PyPI using pip index versions
+                  # The version in parentheses on the first line is the latest
+                  latest_version="$(\pip index versions "${package}" 2>/dev/null | { \grep -e '^Available versions: ' || true; } | \cut -d ',' -f 1 | \sed -e 's/^.*: //')"
+                  if [ "${current_version}" != "${latest_version}" ]; then
+                      echo "${package}: ${current_version} -> ${latest_version}"
+                      rc=$((rc+1))
+                  fi
+              fi
+          done < requirements.txt
+          exit ${rc}

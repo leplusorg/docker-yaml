@@ -1,5 +1,5 @@
 ---
-name: Pipx Check Versions
+name: NPM Check Versions
 
 on:
   schedule:
@@ -8,13 +8,27 @@ on:
 
 permissions: {}
 
+defaults:
+  run:
+    working-directory: yaml
+
 jobs:
   npm-check-versions:
     runs-on: ubuntu-latest
     steps:
-      - name: Check the versions
+      - name: Check out
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version: 24
+      - name: Check outdated dependencies
         shell: bash
         run: |
           set -euo pipefail
           IFS=$'\n\t'
-          docker run --pull always -t --user root "leplusorg/${GITHUB_REPOSITORY#*/docker-}:main" npm outdated --global
+          if npx npm-check-updates | tee -a /dev/stderr | grep -q -e '→' ; then
+            exit 1
+          fi
