@@ -19,7 +19,7 @@ RUN apk upgrade --no-cache \
     gawk=5.3.2-r2 \
     git=2.49.1-r0 \
     grep=3.12-r0 \
-    jq=1.8.0-r0 \
+    jq=1.8.1-r0 \
     npm=11.3.0-r1 \
     pipx=1.7.1-r0 \
     py3-pip=25.1.1-r0 \
