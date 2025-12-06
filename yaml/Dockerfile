@@ -13,18 +13,18 @@ SHELL ["/bin/ash", "-euo", "pipefail", "-c"]
 
 RUN apk upgrade --no-cache \
     && apk add --no-cache \
-    coreutils=9.7-r1 \
-    curl=8.14.1-r2 \
-    dasel=2.8.1-r9 \
+    coreutils=9.8-r1 \
+    curl=8.17.0-r1 \
+    dasel=2.8.1-r10 \
     gawk=5.3.2-r2 \
-    git=2.49.1-r0 \
+    git=2.52.0-r0 \
     grep=3.12-r0 \
     jq=1.8.1-r0 \
-    npm=11.6.4-r0 \
-    pipx=1.7.1-r0 \
-    py3-pip=25.1.1-r0 \
+    npm=11.6.3-r0 \
+    pipx=1.8.0-r0 \
+    py3-pip=25.1.1-r1 \
     python3=3.12.12-r0 \
-    yq-go=4.47.2-r2 \
+    yq-go=4.49.2-r1 \
     && apk cache --no-cache clean \
     && rm -rf /var/cache/apk/*
 
