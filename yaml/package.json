@@ -2,7 +2,7 @@
   "name": "docker-yaml",
   "version": "0.0.0",
   "dependencies": {
-    "prettier": "3.7.4",
+    "prettier": "3.8.0",
     "v8r": "5.1.0"
   }
 }
