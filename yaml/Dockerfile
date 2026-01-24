@@ -15,7 +15,7 @@ RUN apk upgrade --no-cache \
     && apk add --no-cache \
     coreutils=9.8-r1 \
     curl=8.17.0-r1 \
-    dasel=2.8.1-r10 \
+    dasel=2.8.1-r11 \
     gawk=5.3.2-r2 \
     git=2.52.0-r0 \
     grep=3.12-r0 \
@@ -24,7 +24,7 @@ RUN apk upgrade --no-cache \
     pipx=1.8.0-r0 \
     py3-pip=25.1.1-r1 \
     python3=3.12.12-r0 \
-    yq-go=4.49.2-r1 \
+    yq-go=4.49.2-r2 \
     && apk cache --no-cache clean \
     && rm -rf /var/cache/apk/*
 
