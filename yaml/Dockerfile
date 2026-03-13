@@ -20,7 +20,7 @@ RUN apk upgrade --no-cache \
     git=2.52.0-r0 \
     grep=3.12-r0 \
     jq=1.8.1-r0 \
-    npm=11.6.3-r0 \
+    npm=11.11.0-r0 \
     pipx=1.8.0-r0 \
     py3-pip=25.1.1-r1 \
     python3=3.12.12-r0 \
