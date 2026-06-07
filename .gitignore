@@ -16,7 +16,7 @@ node_modules/
 \#*\#
 .\#*
 
-# OSX
+# macOS
 # =========================
 
 .DS_Store
