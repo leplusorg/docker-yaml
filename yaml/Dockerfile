@@ -30,8 +30,11 @@ RUN apk upgrade --no-cache \
 
 COPY requirements.txt /tmp/requirements.txt
 
+# Install each app from requirements.txt in its own venv, using the whole file
+# as pip constraints to also pin dependencies (lines marked "constraint").
 RUN pipx ensurepath --global \
-    && xargs -a /tmp/requirements.txt -n 1 pipx install --global \
+    && sed -e '/#[[:space:]]*constraint[[:space:]]*$/d' -e 's/#.*//' /tmp/requirements.txt \
+    | xargs -n 1 pipx install --global --pip-args=--constraint=/tmp/requirements.txt \
     && rm -f /tmp/requirements.txt
 
 COPY package.json /tmp/package.json
