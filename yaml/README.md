@@ -19,7 +19,7 @@ Build context for the `leplusorg/yaml` container image. See the
   `package.json`, including transitive dependencies. It is not used by the image
   build, so the transitive versions actually installed in the image can differ
   from the ones recorded here.
-- `node_modules/` — created by a local `npm install`; ignored by git and not
+- `node_modules/` — created by a local `npm install`; ignored by Git and not
   part of the image.
 
 ## Manifests
