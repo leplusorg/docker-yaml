@@ -17,7 +17,7 @@ RUN apk upgrade --no-cache \
     curl=8.23.0-r0 \
     dasel=2.8.1-r17 \
     gawk=5.3.2-r2 \
-    git=2.54.0-r0 \
+    git=2.54.1-r0 \
     grep=3.12-r0 \
     jq=1.8.2-r0 \
     npm=11.12.1-r0 \
